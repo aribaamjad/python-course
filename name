@@ -1,4 +1,0 @@
-name = "Ariba"
-
-print("Assalam-o-Alaikum")
-print(name)
