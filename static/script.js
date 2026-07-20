@@ -1,11 +1,6 @@
-// ===============================
-// AI HUB V4 - SEARCH FUNCTION
-// ===============================
-
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
-
     searchInput.addEventListener("keyup", function () {
 
         let value = searchInput.value.toLowerCase();
@@ -18,13 +13,11 @@ if (searchInput) {
 
             if(text.includes(value)){
                 card.style.display = "block";
-            }
-            else{
+            }else{
                 card.style.display = "none";
             }
 
         });
 
     });
-
 }
