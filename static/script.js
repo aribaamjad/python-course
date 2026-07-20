@@ -21,3 +21,17 @@ if (searchInput) {
 
     });
 }
+function toggleMenu(){
+
+let menu=document.getElementById("navLinks");
+
+menu.classList.toggle("active");
+
+}
+function toggleMenu() {
+
+let menu = document.getElementById("navLinks");
+
+menu.classList.toggle("active");
+
+}

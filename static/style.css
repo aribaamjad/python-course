@@ -358,3 +358,102 @@ footer{
     background:#3b82f6;
     box-shadow:0 0 15px rgba(59,130,246,.6);
 }
+.menu-btn{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:white;
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+    display:block;
+}
+
+nav{
+    padding:20px;
+}
+
+nav ul{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    margin-top:20px;
+}
+
+nav ul.active{
+    display:flex;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.tools{
+    grid-template-columns:1fr;
+}
+
+.card{
+    width:100%;
+}
+
+}
+.menu-btn{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+
+@media screen and (max-width:768px){
+
+.menu-btn{
+    display:block;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+#navLinks{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    margin-top:20px;
+}
+
+#navLinks.active{
+    display:flex;
+}
+
+#navLinks li{
+    margin:12px 0;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+    padding:0 15px;
+}
+
+.tools{
+    grid-template-columns:1fr;
+}
+
+.card{
+    width:100%;
+}
+
+}
