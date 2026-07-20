@@ -3,81 +3,68 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hub</title>
 
-    <title>AI Hub</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
-<!-- =========================
-        NAVBAR
-========================= -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
-    <div class="logo">
-        🤖 AI Hub
-    </div>
+<div class="logo">
+🤖 AI Hub
+</div>
 
 <ul>
 
-    <li><a href="/">Home</a></li>
-
-    <li><a href="/tools">AI Tools</a></li>
-
-    <li><a href="/about">About</a></li>
-
-    <li><a href="/contact">Contact</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/tools">AI Tools</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/contact">Contact</a></li>
 
 </ul>
 
 </nav>
 
-<!-- =========================
-        HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <h1>Discover The Best AI Tools 🚀</h1>
+<h1>Discover The Best AI Tools 🚀</h1>
 
-    <p>
+<p>
 
-        Explore powerful AI tools for writing,
-        coding, designing, videos, images,
-        productivity and much more.
+Explore powerful AI tools for Writing,
+Coding, Designing, Videos, Images,
+Productivity and much more.
 
-    </p>
+</p>
 
-    <button>Explore Now</button>
+<button>Explore Now</button>
 
 </section>
 
-<!-- =========================
-        SEARCH
-========================= -->
+<!-- ================= SEARCH ================= -->
 
 <section class="search-section">
 
-    <h2>Search AI Tools</h2>
+<h2>Search AI Tools</h2>
 
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Search AI Tool..."
-    >
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search AI Tool...">
 
 </section>
 
-<!-- =========================
-        CATEGORIES
-========================= -->
+<!-- ================= CATEGORIES ================= -->
 
 <section class="categories">
 
@@ -86,261 +73,268 @@
 <div class="category-box">
 
 <div class="category">💬 Chatbots</div>
-
 <div class="category">💻 Coding</div>
-
 <div class="category">🎨 Design</div>
-
 <div class="category">🎬 Video</div>
-
 <div class="category">🖼 Images</div>
-
 <div class="category">🎵 Music</div>
 
 </div>
 
 </section>
-<!-- =========================
-        FEATURED TOOLS
-========================= -->
 
-<section class="featured">
-
-    <h2>🔥 Featured AI Tools</h2>
-
-    <div class="featured-container">
-
-        <div class="featured-card">
-            <h3>🤖 ChatGPT</h3>
-            <p>Write content, solve coding problems and boost productivity.</p>
-        </div>
-
-        <div class="featured-card">
-            <h3>💡 Gemini</h3>
-            <p>Google AI assistant for research, writing and coding.</p>
-        </div>
-
-        <div class="featured-card">
-            <h3>🎨 Canva AI</h3>
-            <p>Create social media posts, logos and thumbnails instantly.</p>
-        </div>
-
-    </div>
-
-</section>
-<!-- =========================
-        STATS
-========================= -->
-
-<section class="stats">
-
-    <div class="stat-box">
-        <h2>100+</h2>
-        <p>AI Tools</p>
-    </div>
-
-    <div class="stat-box">
-        <h2>50K+</h2>
-        <p>Monthly Visitors</p>
-    </div>
-
-    <div class="stat-box">
-        <h2>24/7</h2>
-        <p>Support</p>
-    </div>
-
-    <div class="stat-box">
-        <h2>100%</h2>
-        <p>Free Access</p>
-    </div>
-
-</section>
-<!-- =========================
-        AI TOOLS
-========================= -->
+<!-- ================= AI TOOLS ================= -->
 
 <section class="tools">
 
+<!-- ChatGPT -->
+
 <div class="card">
 
-    <h2>🤖 ChatGPT</h2>
 
-    <div class="badge free">FREE</div>
+<h2>ChatGPT</h2>
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+<span class="free-badge">FREE</span>
 
-    <p>Best AI chatbot for writing and coding.</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <a href="https://chatgpt.com" target="_blank">
+<p>Best AI chatbot for writing and coding.</p>
 
-        <button>Open Tool</button>
+<a href="https://chatgpt.com" target="_blank">
 
-    </a>
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Gemini -->
+
 <div class="card">
 
-    <h2>💡 Gemini</h2>
 
-    <div class="badge free">FREE</div>
+<h2>Gemini</h2>
 
-    <div class="rating">⭐⭐⭐⭐☆</div>
+<span class="free-badge">FREE</span>
 
-    <p>Google AI assistant.</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <a href="https://gemini.google.com" target="_blank">
+<p>Google AI Assistant.</p>
 
-        <button>Open Tool</button>
+<a href="https://gemini.google.com" target="_blank">
 
-    </a>
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Claude -->
+
 <div class="card">
 
-    <h2>🧠 Claude</h2>
 
-    <div class="badge free">FREE</div>
+<h2>Claude</h2>
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+<span class="free-badge">FREE</span>
 
-    <p>Helpful AI assistant.</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <a href="https://claude.ai" target="_blank">
+<p>Helpful AI assistant by Anthropic.</p>
 
-        <button>Open Tool</button>
+<a href="https://claude.ai" target="_blank">
 
-    </a>
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Canva -->
+
 <div class="card">
 
-    <h2>🎨 Canva AI</h2>
 
-    <div class="badge mixed">FREE + PRO</div>
+<h2>Canva AI</h2>
 
-    <div class="rating">⭐⭐⭐⭐☆</div>
+<span class="pro-badge">FREE + PRO</span>
 
-    <p>Create stunning graphics.</p>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <a href="https://www.canva.com" target="_blank">
+<p>Create stunning graphics with AI.</p>
 
-        <button>Open Tool</button>
+<a href="https://www.canva.com" target="_blank">
 
-    </a>
+<button>Open Tool</button>
 
-</div>
-<div class="card">
-
-    <h2>💻 GitHub Copilot</h2>
-
-    <p>AI assistant for programmers.</p>
-
-    <a href="https://github.com/features/copilot" target="_blank">
-
-        <button>Open Tool</button>
-
-    </a>
+</a>
 
 </div>
 
+<!-- GitHub Copilot -->
+
 <div class="card">
 
-    <h2>🎬 Runway ML</h2>
 
-    <p>Create AI videos in seconds.</p>
+<h2>GitHub Copilot</h2>
 
-    <a href="https://runwayml.com" target="_blank">
+<span class="pro-badge">PRO</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>AI coding assistant for developers.</p>
+
+<a href="https://github.com/features/copilot" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Runway -->
+
 <div class="card">
 
-    <h2>🖼️ Midjourney</h2>
 
-    <p>Create amazing AI images.</p>
+<h2>Runway ML</h2>
 
-    <a href="https://www.midjourney.com" target="_blank">
+<span class="pro-badge">FREE + PRO</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>Create AI videos in seconds.</p>
+
+<a href="https://runwayml.com" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
+
+</div>
+<!-- Midjourney -->
+
+<div class="card">
+
+
+<h2>Midjourney</h2>
+
+<span class="pro-badge">PRO</span>
+
+<div class="rating">⭐⭐⭐⭐⭐</div>
+
+<p>Create amazing AI images.</p>
+
+<a href="https://www.midjourney.com" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- ElevenLabs -->
+
 <div class="card">
 
-    <h2>🎙️ ElevenLabs</h2>
 
-    <p>Generate realistic AI voices.</p>
+<h2>ElevenLabs</h2>
 
-    <a href="https://elevenlabs.io" target="_blank">
+<span class="free-badge">FREE</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>Generate realistic AI voices.</p>
+
+<a href="https://elevenlabs.io" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Perplexity -->
+
 <div class="card">
 
-    <h2>🔍 Perplexity AI</h2>
 
-    <p>AI-powered search engine.</p>
+<h2>Perplexity AI</h2>
 
-    <a href="https://www.perplexity.ai" target="_blank">
+<span class="free-badge">FREE</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>AI powered search engine.</p>
+
+<a href="https://www.perplexity.ai" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Suno -->
+
 <div class="card">
 
-    <h2>🎵 Suno AI</h2>
 
-    <p>Create songs with Artificial Intelligence.</p>
+<h2>Suno AI</h2>
 
-    <a href="https://suno.com" target="_blank">
+<span class="free-badge">FREE</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>Create songs using AI.</p>
+
+<a href="https://suno.com" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Gamma -->
+
 <div class="card">
 
-    <h2>📊 Gamma AI</h2>
 
-    <p>Create presentations using AI.</p>
+<h2>Gamma AI</h2>
 
-    <a href="https://gamma.app" target="_blank">
+<span class="free-badge">FREE</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>Create presentations with AI.</p>
+
+<a href="https://gamma.app" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
+<!-- Grammarly -->
+
 <div class="card">
 
-    <h2>✍️ Grammarly AI</h2>
 
-    <p>Improve your writing instantly.</p>
+<h2>Grammarly AI</h2>
 
-    <a href="https://www.grammarly.com" target="_blank">
+<span class="free-badge">FREE</span>
 
-        <button>Open Tool</button>
+<div class="rating">⭐⭐⭐⭐⭐</div>
 
-    </a>
+<p>Improve your writing instantly.</p>
+
+<a href="https://www.grammarly.com" target="_blank">
+
+<button>Open Tool</button>
+
+</a>
 
 </div>
 
@@ -348,11 +342,11 @@
 
 <footer>
 
-    <p>
+<p>
 
-        © 2026 AI Hub | Built with Python Flask ❤️
+© 2026 AI Hub | Built with Python Flask ❤️
 
-    </p>
+</p>
 
 </footer>
 
