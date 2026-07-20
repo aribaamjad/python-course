@@ -317,3 +317,44 @@ footer{
     color:#cbd5e1;
     font-size:18px;
 }
+/* =========================
+   BADGES
+========================= */
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.free{
+    background:#22c55e;
+    color:white;
+}
+
+.mixed{
+    background:#f59e0b;
+    color:white;
+}
+
+.rating{
+    color:#facc15;
+    font-size:22px;
+    margin-bottom:15px;
+}
+/* =========================
+   BUTTON ANIMATION
+========================= */
+
+.card button{
+    transition:all .3s ease;
+}
+
+.card button:hover{
+    transform:scale(1.08);
+    background:#3b82f6;
+    box-shadow:0 0 15px rgba(59,130,246,.6);
+}
