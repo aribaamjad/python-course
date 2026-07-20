@@ -3,73 +3,94 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - AI Hub</title>
 
-    <title>Contact - AI Hub</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
 
-    <div class="logo">
-        🤖 AI Hub
-    </div>
+<div class="logo">
+🤖 AI Hub
+</div>
 
-    <ul>
+<ul>
 
-        <li><a href="/">Home</a></li>
+<li><a href="/">Home</a></li>
+<li><a href="/tools">AI Tools</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="/contact">Contact</a></li>
 
-        <li><a href="/about">About</a></li>
-
-        <li><a href="/contact">Contact</a></li>
-
-    </ul>
+</ul>
 
 </nav>
 
+<!-- CONTACT -->
+
 <section class="hero">
 
-    <h1>Contact Us</h1>
+<h1>Contact Us</h1>
 
-    <p>
-        Have questions or suggestions?
-    </p>
+<p>
+Have any questions or suggestions? Send us a message.
+</p>
 
-    <br>
+{% if success %}
 
-    <form class="contact-form">
+<p style="color:lime;font-size:20px;margin-top:20px;">
+✅ Message Sent Successfully!
+</p>
 
-        <input type="text" placeholder="Your Name" required>
+{% endif %}
 
-        <br><br>
+<form action="/contact" method="POST" style="max-width:600px;margin:40px auto;display:flex;flex-direction:column;gap:20px;">
 
-        <input type="email" placeholder="Your Email" required>
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required
+style="padding:15px;border-radius:10px;border:none;">
 
-        <br><br>
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required
+style="padding:15px;border-radius:10px;border:none;">
 
-        <textarea placeholder="Your Message" rows="6" required></textarea>
+<textarea
+name="message"
+rows="6"
+placeholder="Your Message"
+required
+style="padding:15px;border-radius:10px;border:none;"></textarea>
 
-        <br><br>
+<button
+type="submit"
+style="padding:15px;background:#2563eb;color:white;border:none;border-radius:10px;font-size:18px;cursor:pointer;">
 
-        <button type="submit">Send Message</button>
+Send Message
 
-    </form>
+</button>
+
+</form>
 
 </section>
 
 <footer>
 
-    <p>
-
-        © 2026 AI Hub | Built with Python Flask ❤️
-
-    </p>
+<p>
+© 2026 AI Hub | Built with Python Flask ❤️
+</p>
 
 </footer>
 

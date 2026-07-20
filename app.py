@@ -1,38 +1,72 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 # =========================
-# Home Page
+# Home
 # =========================
 @app.route("/")
 def home():
     return render_template("index.html")
 
-
 # =========================
-# AI Tools Page
+# AI Tools
 # =========================
 @app.route("/tools")
 def tools():
     return render_template("tools.html")
 
-
 # =========================
-# About Page
+# About
 # =========================
 @app.route("/about")
 def about():
     return render_template("about.html")
 
-
 # =========================
-# Contact Page
+# Contact
 # =========================
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html")
 
+    success = False
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
+
+        print("\n===== NEW MESSAGE =====")
+        print("Name:", name)
+        print("Email:", email)
+        print("Message:", message)
+        print("=======================\n")
+
+        success = True
+
+    return render_template("contact.html", success=success)
+
+# =========================
+# Login
+# =========================
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+        print("User Login Attempt")
+
+    return render_template("login.html")
+
+# =========================
+# Signup
+# =========================
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+
+    if request.method == "POST":
+        print("New User Signup")
+
+    return render_template("signup.html")
 
 # =========================
 # Run App
