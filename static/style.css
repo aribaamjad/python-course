@@ -625,3 +625,55 @@ nav{
 .light-mode p{
     color:#444;
 }
+/* Hero Buttons */
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:15px 30px;
+    border:none;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#2563eb;
+    color:white;
+}
+
+.btn-secondary{
+    background:#10b981;
+    color:white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+    transform:translateY(-5px);
+}
+
+.hero-stats{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.hero-stats h2{
+    font-size:35px;
+    color:#2563eb;
+}
+
+.hero-stats p{
+    margin-top:5px;
+}
