@@ -766,3 +766,19 @@ nav{
     color:#4da3ff;
     font-weight:bold;
 }
+/* Logo */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:28px;
+    font-weight:bold;
+    color:white;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+}
