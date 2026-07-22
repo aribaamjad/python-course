@@ -677,3 +677,45 @@ nav{
 .hero-stats p{
     margin-top:5px;
 }
+/* ================= WHY AI HUB ================= */
+
+.why-us{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.why-us h2{
+    font-size:38px;
+    margin-bottom:40px;
+    color:#fff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.why-card{
+    background:#1b2435;
+    padding:30px;
+    border-radius:18px;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+.why-card h3{
+    color:#4da3ff;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.why-card p{
+    color:#cfd8e3;
+    line-height:1.7;
+}
