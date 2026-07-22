@@ -719,3 +719,50 @@ nav{
     color:#cfd8e3;
     line-height:1.7;
 }
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.testimonials h2{
+    font-size:38px;
+    margin-bottom:40px;
+    color:#fff;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.testimonial-card{
+    background:#1b2435;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.4);
+}
+
+.testimonial-card p{
+    color:#ddd;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.testimonial-card h4{
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+.testimonial-card span{
+    color:#4da3ff;
+    font-weight:bold;
+}
