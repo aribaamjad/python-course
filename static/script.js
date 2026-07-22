@@ -35,3 +35,6 @@ let menu = document.getElementById("navLinks");
 menu.classList.toggle("active");
 
 }
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+}

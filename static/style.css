@@ -514,3 +514,39 @@ nav{
 }
 
 }
+/* ================= MOBILE NAVBAR ================= */
+
+.menu-btn{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.menu-btn{
+    display:block;
+}
+
+#navLinks{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:15px;
+    width:220px;
+    background:#1d2333;
+    border-radius:10px;
+    padding:15px;
+}
+
+#navLinks.show{
+    display:flex;
+}
+
+#navLinks li{
+    margin:12px 0;
+}
+
+}
