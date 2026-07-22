@@ -38,3 +38,20 @@ menu.classList.toggle("active");
 function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("show");
 }
+function toggleTheme() {
+
+document.body.classList.toggle("light-mode");
+
+let btn = document.getElementById("themeBtn");
+
+if(document.body.classList.contains("light-mode")){
+
+btn.innerHTML="☀️";
+
+}else{
+
+btn.innerHTML="🌙";
+
+}
+
+}
