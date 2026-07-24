@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tools - AI Hub</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -15,7 +16,7 @@
     <span>AI Hub</span>
 </div>
 
-<ul>
+<ul id="navLinks">
 <li><a href="/">Home</a></li>
 <li><a href="/tools">AI Tools</a></li>
 <li><a href="/about">About</a></li>
@@ -25,16 +26,25 @@
 </nav>
 
 <section class="hero">
-    <h1>Popular AI Tools</h1>
-    <p>Browse the best AI tools in one place.</p>
 
-    <div class="categories">
-        <button onclick="filterTools('all')">🌍 All</button>
-        <button onclick="filterTools('chatbot')">💬 Chatbots</button>
-        <button onclick="filterTools('coding')">💻 Coding</button>
-        <button onclick="filterTools('design')">🎨 Design</button>
-        <button onclick="filterTools('image')">🖼️ Images</button>
-    </div>
+<h1>Popular AI Tools</h1>
+
+<p>Browse the best AI tools in one place.</p>
+
+<div class="categories">
+
+<button onclick="filterTools('all')">🌍 All</button>
+
+<button onclick="filterTools('chatbot')">💬 Chatbots</button>
+
+<button onclick="filterTools('coding')">💻 Coding</button>
+
+<button onclick="filterTools('design')">🎨 Design</button>
+
+<button onclick="filterTools('image')">🖼 Images</button>
+
+</div>
+
 </section>
 
 <section class="tools">
@@ -47,9 +57,9 @@
 </a>
 </div>
 
-<div class="card coding">
+<div class="card chatbot">
 <h2>💡 Gemini</h2>
-<p>Google's AI assistant.</p>
+<p>Google AI Assistant.</p>
 <a href="https://gemini.google.com" target="_blank">
 <button>Visit</button>
 </a>
@@ -57,7 +67,7 @@
 
 <div class="card chatbot">
 <h2>🧠 Claude</h2>
-<p>Powerful AI assistant by Anthropic.</p>
+<p>AI Assistant by Anthropic.</p>
 <a href="https://claude.ai" target="_blank">
 <button>Visit</button>
 </a>
@@ -65,22 +75,34 @@
 
 <div class="card design">
 <h2>🎨 Canva AI</h2>
-<p>Create amazing graphics with AI.</p>
+<p>Create graphics using AI.</p>
 <a href="https://www.canva.com" target="_blank">
 <button>Visit</button>
 </a>
 </div>
+
+<div class="card coding">
+<h2>💻 GitHub Copilot</h2>
+<p>AI Coding Assistant.</p>
+<a href="https://github.com/features/copilot" target="_blank">
+<button>Visit</button>
+</a>
+</div>
+
 <div class="card image">
-<h2>🖼️ Midjourney</h2>
-<p>AI Image Generator.</p>
+<h2>🖼 Midjourney</h2>
+<p>Generate AI Images.</p>
 <a href="https://www.midjourney.com" target="_blank">
 <button>Visit</button>
 </a>
 </div>
+
 </section>
 
 <footer>
+
 <p>© 2026 AI Hub</p>
+
 </footer>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
