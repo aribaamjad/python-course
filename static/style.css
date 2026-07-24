@@ -782,3 +782,14 @@ nav{
     height:42px;
     border-radius:10px;
 }
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.footer-logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
