@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://python-course-ecrb.vercel.app/sitemap.xml
