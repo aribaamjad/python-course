@@ -80,6 +80,9 @@ def disclaimer():
 @app.route("/dmca")
 def dmca():
     return render_template("dmca.html")
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
 # =========================
 # Run App
 # =========================
