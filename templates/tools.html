@@ -25,13 +25,21 @@
 </nav>
 
 <section class="hero">
-<h1>Popular AI Tools</h1>
-<p>Browse the best AI tools in one place.</p>
+    <h1>Popular AI Tools</h1>
+    <p>Browse the best AI tools in one place.</p>
+
+    <div class="categories">
+        <button onclick="filterTools('all')">🌍 All</button>
+        <button onclick="filterTools('chatbot')">💬 Chatbots</button>
+        <button onclick="filterTools('coding')">💻 Coding</button>
+        <button onclick="filterTools('design')">🎨 Design</button>
+        <button onclick="filterTools('image')">🖼️ Images</button>
+    </div>
 </section>
 
 <section class="tools">
 
-<div class="card">
+<div class="card chatbot">
 <h2>🤖 ChatGPT</h2>
 <p>Best AI chatbot for writing, coding and learning.</p>
 <a href="https://chatgpt.com" target="_blank">
@@ -39,7 +47,7 @@
 </a>
 </div>
 
-<div class="card">
+<div class="card chatbot">
 <h2>💡 Gemini</h2>
 <p>Google's AI assistant.</p>
 <a href="https://gemini.google.com" target="_blank">
@@ -47,7 +55,7 @@
 </a>
 </div>
 
-<div class="card">
+<div class="card chatbot">
 <h2>🧠 Claude</h2>
 <p>Powerful AI assistant by Anthropic.</p>
 <a href="https://claude.ai" target="_blank">
@@ -55,7 +63,7 @@
 </a>
 </div>
 
-<div class="card">
+<div class="card chatbot">
 <h2>🎨 Canva AI</h2>
 <p>Create amazing graphics with AI.</p>
 <a href="https://www.canva.com" target="_blank">
