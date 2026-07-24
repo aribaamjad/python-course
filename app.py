@@ -67,9 +67,22 @@ def signup():
         print("New User Signup")
 
     return render_template("signup.html")
+@app.route("/terms")
+def terms():
+    return render_template("terms.html")
 
+
+@app.route("/disclaimer")
+def disclaimer():
+    return render_template("disclaimer.html")
+
+
+@app.route("/dmca")
+def dmca():
+    return render_template("dmca.html")
 # =========================
 # Run App
 # =========================
 if __name__ == "__main__":
     app.run(debug=True)
+
