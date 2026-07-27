@@ -8,21 +8,66 @@
 </head>
 <body>
 
-<div class="container">
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='favicon.png') }}" alt="AI Hub Logo">
+        <span>AI Hub</span>
+    </div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools">AI Tools</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
     <h1>Disclaimer</h1>
+    <p>Please read this disclaimer carefully.</p>
+</section>
 
-    <p>All information on AI Hub is provided for educational and informational purposes only.</p>
+<section class="content">
 
-    <h2>Accuracy</h2>
-    <p>We do not guarantee that all information is complete or always up to date.</p>
+<h2>General Information</h2>
+<p>
+The information provided on AI Hub is for educational and informational purposes only.
+</p>
 
-    <h2>External Services</h2>
-    <p>AI Hub is not affiliated with OpenAI, Google, Anthropic, Canva, or any other listed company unless clearly stated.</p>
+<h2>No Professional Advice</h2>
+<p>
+We do not provide legal, financial, medical, or professional advice. Always consult a qualified professional when needed.
+</p>
 
-    <h2>Use at Your Own Risk</h2>
-    <p>Users are responsible for how they use third-party AI tools.</p>
+<h2>External Links</h2>
+<p>
+Our website may contain links to third-party websites. We are not responsible for their content, accuracy, or services.
+</p>
 
-</div>
+<h2>Accuracy</h2>
+<p>
+We try to keep all information updated, but we cannot guarantee that everything is always complete or accurate.
+</p>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-links">
+        <a href="/">Home</a> |
+        <a href="/tools">AI Tools</a> |
+        <a href="/about">About</a> |
+        <a href="/contact">Contact</a> |
+        <a href="/privacy">Privacy Policy</a> |
+        <a href="/terms">Terms & Conditions</a> |
+        <a href="/disclaimer">Disclaimer</a>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 AI Hub. All Rights Reserved.
+    </div>
+
+</footer>
 
 </body>
 </html>

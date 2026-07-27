@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Tools - AI Hub</title>
 
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <nav>
 
 <div class="logo">
-    <img src="{{ url_for('static', filename='favicon.png') }}" alt="AI Hub Logo">
-    <span>AI Hub</span>
+<img src="{{ url_for('static', filename='favicon.png') }}" alt="AI Hub Logo">
+<span>AI Hub</span>
 </div>
 
-<ul id="navLinks">
+<ul>
 <li><a href="/">Home</a></li>
 <li><a href="/tools">AI Tools</a></li>
 <li><a href="/about">About</a></li>
@@ -27,9 +30,18 @@
 
 <section class="hero">
 
-<h1>Popular AI Tools</h1>
+<h1>Discover The Best AI Tools 🚀</h1>
 
-<p>Browse the best AI tools in one place.</p>
+<p>
+Explore the world's most popular AI tools for Chatbots, Writing,
+Coding, Images, Videos, Music, Productivity and much more.
+</p>
+
+<input
+type="text"
+id="searchInput"
+placeholder="🔍 Search AI Tools..."
+>
 
 <div class="categories">
 
@@ -37,77 +49,279 @@
 
 <button onclick="filterTools('chatbot')">💬 Chatbots</button>
 
+<button onclick="filterTools('writing')">✍️ Writing</button>
+
 <button onclick="filterTools('coding')">💻 Coding</button>
 
-<button onclick="filterTools('design')">🎨 Design</button>
+<button onclick="filterTools('image')">🖼️ Images</button>
 
-<button onclick="filterTools('image')">🖼 Images</button>
+<button onclick="filterTools('video')">🎬 Video</button>
+
+<button onclick="filterTools('music')">🎵 Music</button>
+
+<button onclick="filterTools('productivity')">⚡ Productivity</button>
+
+<button onclick="filterTools('design')">🎨 Design</button>
 
 </div>
 
 </section>
 
 <section class="tools">
-
-<div class="card chatbot">
+    <div class="card chatbot">
 <h2>🤖 ChatGPT</h2>
-<p>Best AI chatbot for writing, coding and learning.</p>
-<a href="https://chatgpt.com" target="_blank">
-<button>Visit</button>
-</a>
+<p>Powerful AI chatbot for writing, coding, learning and productivity.</p>
+<a href="https://chatgpt.com" target="_blank"><button>Visit</button></a>
 </div>
 
 <div class="card chatbot">
-<h2>💡 Gemini</h2>
-<p>Google AI Assistant.</p>
-<a href="https://gemini.google.com" target="_blank">
-<button>Visit</button>
-</a>
+<h2>💎 Gemini</h2>
+<p>Google AI assistant for research, writing and coding.</p>
+<a href="https://gemini.google.com" target="_blank"><button>Visit</button></a>
 </div>
 
 <div class="card chatbot">
 <h2>🧠 Claude</h2>
-<p>AI Assistant by Anthropic.</p>
-<a href="https://claude.ai" target="_blank">
-<button>Visit</button>
-</a>
+<p>Advanced AI assistant by Anthropic.</p>
+<a href="https://claude.ai" target="_blank"><button>Visit</button></a>
 </div>
 
-<div class="card design">
-<h2>🎨 Canva AI</h2>
-<p>Create graphics using AI.</p>
-<a href="https://www.canva.com" target="_blank">
-<button>Visit</button>
-</a>
+<div class="card chatbot">
+<h2>🔍 Perplexity AI</h2>
+<p>AI search engine with accurate answers.</p>
+<a href="https://www.perplexity.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card chatbot">
+<h2>🤖 Grok</h2>
+<p>xAI chatbot with real-time information.</p>
+<a href="https://grok.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card writing">
+<h2>✍️ Grammarly AI</h2>
+<p>Improve grammar and writing instantly.</p>
+<a href="https://www.grammarly.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card writing">
+<h2>📝 Jasper AI</h2>
+<p>Create blogs, ads and marketing content.</p>
+<a href="https://www.jasper.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card writing">
+<h2>📄 Copy.ai</h2>
+<p>Generate marketing and business content.</p>
+<a href="https://www.copy.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card writing">
+<h2>📚 Writesonic</h2>
+<p>AI content writing and SEO assistant.</p>
+<a href="https://writesonic.com" target="_blank"><button>Visit</button></a>
 </div>
 
 <div class="card coding">
 <h2>💻 GitHub Copilot</h2>
-<p>AI Coding Assistant.</p>
-<a href="https://github.com/features/copilot" target="_blank">
-<button>Visit</button>
-</a>
+<p>AI coding assistant by GitHub.</p>
+<a href="https://github.com/features/copilot" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card coding">
+<h2>⚡ Codeium</h2>
+<p>Free AI coding assistant.</p>
+<a href="https://codeium.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card coding">
+<h2>⌨️ Tabnine</h2>
+<p>Smart AI code completion.</p>
+<a href="https://www.tabnine.com" target="_blank"><button>Visit</button></a>
 </div>
 
 <div class="card image">
-<h2>🖼 Midjourney</h2>
-<p>Generate AI Images.</p>
-<a href="https://www.midjourney.com" target="_blank">
-<button>Visit</button>
-</a>
+<h2>🎨 Midjourney</h2>
+<p>Create beautiful AI artwork.</p>
+<a href="https://www.midjourney.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card image">
+<h2>🖼️ Leonardo AI</h2>
+<p>Professional AI image generation.</p>
+<a href="https://leonardo.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card design">
+<h2>🎨 Canva AI</h2>
+<p>Design graphics with AI.</p>
+<a href="https://www.canva.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card design">
+<h2>🔥 Adobe Firefly</h2>
+<p>Adobe AI image generation tool.</p>
+<a href="https://firefly.adobe.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card music">
+<h2>🎵 Suno AI</h2>
+<p>Create songs using AI.</p>
+<a href="https://suno.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card voice">
+<h2>🎙️ ElevenLabs</h2>
+<p>Generate realistic AI voices.</p>
+<a href="https://elevenlabs.io" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card video">
+<h2>🎬 Runway ML</h2>
+<p>AI video editing and generation.</p>
+<a href="https://runwayml.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card productivity">
+<h2>📒 Notion AI</h2>
+<p>AI assistant for notes and productivity.</p>
+<a href="https://www.notion.so" target="_blank"><button>Visit</button></a>
+</div>
+<div class="card productivity">
+<h2>🪟 Microsoft Copilot</h2>
+<p>Microsoft AI assistant for work and productivity.</p>
+<a href="https://copilot.microsoft.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card translation">
+<h2>🌍 DeepL</h2>
+<p>AI-powered language translation.</p>
+<a href="https://www.deepl.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card video">
+<h2>🎥 Pika</h2>
+<p>Create AI videos from text prompts.</p>
+<a href="https://pika.art" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card video">
+<h2>📹 Synthesia</h2>
+<p>Create AI avatar videos in minutes.</p>
+<a href="https://www.synthesia.io" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card image">
+<h2>🖌️ Remove.bg</h2>
+<p>Remove image backgrounds instantly.</p>
+<a href="https://www.remove.bg" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card image">
+<h2>✨ Clipdrop</h2>
+<p>AI image editing and enhancement.</p>
+<a href="https://clipdrop.co" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card presentation">
+<h2>📊 Gamma AI</h2>
+<p>Create presentations using AI.</p>
+<a href="https://gamma.app" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card presentation">
+<h2>📖 Tome AI</h2>
+<p>AI storytelling and presentations.</p>
+<a href="https://tome.app" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card presentation">
+<h2>📈 Beautiful.ai</h2>
+<p>Professional AI presentation builder.</p>
+<a href="https://www.beautiful.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card productivity">
+<h2>🎤 Otter.ai</h2>
+<p>AI meeting notes and transcription.</p>
+<a href="https://otter.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card audio">
+<h2>🔊 Krisp</h2>
+<p>AI noise cancellation for meetings.</p>
+<a href="https://krisp.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card video">
+<h2>🎞️ Descript</h2>
+<p>Edit audio and video using AI.</p>
+<a href="https://www.descript.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card video">
+<h2>🎬 VEED AI</h2>
+<p>Online AI video editor.</p>
+<a href="https://www.veed.io" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card chatbot">
+<h2>🤝 Poe AI</h2>
+<p>Use multiple AI chatbots in one app.</p>
+<a href="https://poe.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card models">
+<h2>🤗 Hugging Face</h2>
+<p>Open-source AI models and datasets.</p>
+<a href="https://huggingface.co" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card models">
+<h2>🚀 Mistral AI</h2>
+<p>Powerful open AI models.</p>
+<a href="https://mistral.ai" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card coding">
+<h2>💡 DeepSeek</h2>
+<p>AI assistant for coding and reasoning.</p>
+<a href="https://www.deepseek.com" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card design">
+<h2>🪄 Canva Magic Studio</h2>
+<p>Advanced AI tools inside Canva.</p>
+<a href="https://www.canva.com/magic-studio/" target="_blank"><button>Visit</button></a>
+</div>
+
+<div class="card image">
+<h2>📷 Pixlr AI</h2>
+<p>AI photo editing and enhancement.</p>
+<a href="https://pixlr.com" target="_blank"><button>Visit</button></a>
 </div>
 
 </section>
 
-<footer>
+<footer class="footer">
 
-<p>© 2026 AI Hub</p>
+<div class="footer-links">
+<a href="/">Home</a> |
+<a href="/tools">AI Tools</a> |
+<a href="/about">About</a> |
+<a href="/contact">Contact</a> |
+<a href="/privacy">Privacy Policy</a> |
+<a href="/terms">Terms & Conditions</a> |
+<a href="/disclaimer">Disclaimer</a>
+</div>
+
+<div class="footer-bottom">
+© 2026 AI Hub. All Rights Reserved.
+</div>
 
 </footer>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-<script>
-alert("JavaScript Working");
-</script>
+
 </body>
 </html>

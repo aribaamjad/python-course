@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - AI Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='favicon.png') }}" alt="AI Hub Logo">
+        <span>AI Hub</span>
+    </div>
 
-<p>AI Hub respects your privacy.</p>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools">AI Tools</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
 
-<p>We may collect anonymous information such as browser type, pages visited and cookies to improve the website.</p>
+<section class="hero">
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us.</p>
+</section>
 
-<p>Google may use cookies to serve ads.</p>
+<section class="content">
 
-<p>By using this website you agree to our Privacy Policy.</p>
+<h2>Information We Collect</h2>
+<p>
+AI Hub may collect basic information such as your name, email address,
+or usage data when you contact us or interact with our website.
+</p>
+
+<h2>How We Use Your Information</h2>
+<p>
+We use your information to improve our website, respond to inquiries,
+and provide a better user experience.
+</p>
+
+<h2>Cookies</h2>
+<p>
+Our website may use cookies to improve browsing experience and analyze website traffic.
+</p>
+
+<h2>Third-Party Services</h2>
+<p>
+We may use third-party services such as Google Analytics and Google AdSense.
+These services may collect information according to their own privacy policies.
+</p>
+
+<h2>Security</h2>
+<p>
+We take reasonable measures to protect your personal information,
+but no method of transmission over the Internet is 100% secure.
+</p>
+
+<h2>Contact Us</h2>
+<p>
+If you have any questions regarding this Privacy Policy,
+please visit our Contact page.
+</p>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-links">
+        <a href="/">Home</a> |
+        <a href="/tools">AI Tools</a> |
+        <a href="/about">About</a> |
+        <a href="/contact">Contact</a> |
+        <a href="/privacy">Privacy Policy</a>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 AI Hub. All Rights Reserved.
+    </div>
+
+</footer>
 
 </body>
 </html>
