@@ -36,6 +36,9 @@ def disclaimer():
 @app.route("/blog")
 def blog():
     return render_template("blog.html")
+@app.route("/blog/best-ai-tools-for-students")
+def best_ai_tools_for_students():
+    return render_template("best-ai-tools-for-students.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
