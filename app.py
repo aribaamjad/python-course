@@ -42,6 +42,9 @@ def best_ai_tools_for_students():
 @app.route("/blog/top-10-free-ai-tools-2026")
 def top_10_free_ai_tools_2026():
     return render_template("top-10-free-ai-tools-2026.html")
+@app.route("/blog/chatgpt-beginner-guide")
+def chatgpt_beginner_guide():
+    return render_template("chatgpt-beginner-guide.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
