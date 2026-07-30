@@ -48,6 +48,9 @@ def chatgpt_beginner_guide():
 @app.route("/blog/top-10-free-ai-image-generators")
 def top_10_free_ai_image_generators():
     return render_template("top-10-free-ai-image-generators.html")
+@app.route("/blog/claude-vs-chatgpt-2026")
+def claude_vs_chatgpt_2026():
+    return render_template("claude-vs-chatgpt-2026.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
