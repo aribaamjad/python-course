@@ -54,6 +54,9 @@ def claude_vs_chatgpt_2026():
 @app.route("/blog/best-ai-tools-for-teachers-2026")
 def best_ai_tools_for_teachers_2026():
     return render_template("best-ai-tools-for-teachers-2026.html")
+@app.route("/blog/chatgpt-vs-gemini-2026")
+def chatgpt_vs_gemini_2026():
+    return render_template("chatgpt-vs-gemini-2026.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
