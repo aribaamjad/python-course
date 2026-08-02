@@ -63,6 +63,9 @@ def best_ai_resume_builders_2026():
 @app.route("/blog/best-free-ai-video-generators-2026")
 def best_free_ai_video_generators_2026():
     return render_template("best-free-ai-video-generators-2026.html")
+@app.route("/blog/how-to-write-better-ai-prompts-2026")
+def how_to_write_better_ai_prompts_2026():
+    return render_template("how-to-write-better-ai-prompts-2026.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
