@@ -75,6 +75,12 @@ def best_ai_tools_for_content_creators_2026():
 @app.route("/blog/best-ai-coding-assistants-2026")
 def best_ai_coding_assistants_2026():
     return render_template("best-ai-coding-assistants-2026.html")
+@app.route("/blog/best-ai-tools-for-freelancers-2026")
+def best_ai_tools_for_freelancers_2026():
+    return render_template("best-ai-tools-for-freelancers-2026.html")
+@app.route("/blog/best-ai-tools-for-small-businesses-2026")
+def best_ai_tools_for_small_businesses_2026():
+    return render_template("best-ai-tools-for-small-businesses-2026.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
