@@ -69,6 +69,9 @@ def how_to_write_better_ai_prompts_2026():
     @app.route("/blog/best-ai-tools-for-youtubers-2026")
 def best_ai_tools_for_youtubers_2026():
     return render_template("best-ai-tools-for-youtubers-2026.html")
+@app.route("/blog/best-ai-tools-for-content-creators-2026")
+def best_ai_tools_for_content_creators_2026():
+    return render_template("best-ai-tools-for-content-creators-2026.html")
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port, debug=False)
