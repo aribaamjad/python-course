@@ -4,16 +4,15 @@ if (searchInput) {
     searchInput.addEventListener("keyup", function () {
 
         let value = searchInput.value.toLowerCase();
-
         let cards = document.querySelectorAll(".card");
 
-        cards.forEach(function(card){
+        cards.forEach(function (card) {
 
             let text = card.innerText.toLowerCase();
 
-            if(text.includes(value)){
+            if (text.includes(value)) {
                 card.style.display = "block";
-            }else{
+            } else {
                 card.style.display = "none";
             }
 
@@ -21,45 +20,41 @@ if (searchInput) {
 
     });
 }
-function toggleMenu(){
 
-let menu=document.getElementById("navLinks");
 
-menu.classList.toggle("active");
-
-}
+// Mobile Menu
 function toggleMenu() {
+    let menu = document.getElementById("navLinks");
 
-let menu = document.getElementById("navLinks");
-
-menu.classList.toggle("active");
-
+    if (menu) {
+        menu.classList.toggle("active");
+    }
 }
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-}
+
+
+// Dark / Light Theme
 function toggleTheme() {
 
-document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("light-mode");
 
-let btn = document.getElementById("themeBtn");
+    let btn = document.getElementById("themeBtn");
 
-if(document.body.classList.contains("light-mode")){
-
-btn.innerHTML="☀️";
-
-}else{
-
-btn.innerHTML="🌙";
-
+    if (btn) {
+        if (document.body.classList.contains("light-mode")) {
+            btn.innerHTML = "☀️";
+        } else {
+            btn.innerHTML = "🌙";
+        }
+    }
 }
 
-}
+
+// Filter AI Tools
 function filterTools(category) {
 
     const cards = document.querySelectorAll(".card");
 
-    cards.forEach(card => {
+    cards.forEach(function (card) {
 
         if (category === "all") {
             card.style.display = "block";
@@ -74,5 +69,4 @@ function filterTools(category) {
         }
 
     });
-
 }
