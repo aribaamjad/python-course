@@ -3,6 +3,9 @@ import os
 
 app = Flask(__name__)
 
+@app.route("/google853ead28f29bf53f.html")
+def google_verification():
+    return "google-site-verification: google853ead28f29bf53f.html"
 # Home Page
 @app.route("/")
 def home():
