@@ -1,5 +1,4 @@
 User-agent: *
-
 Allow: /
 
-Sitemap: https://python-course-ecrb.vercel.app/sitemap.xml
+Sitemap: https://python-course-qczt.vercel.app/sitemap.xml
