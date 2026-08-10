@@ -7,7 +7,7 @@ app = Flask(__name__)
 def robots():
     return """User-agent: *
 Allow: /
-Sitemap: https://python-course-ecrb.vercel.app/sitemap.xml
+Sitemap: https://python-course-qczt.vercel.app/sitemap.xml
 """, 200, {"Content-Type": "text/plain"}
 @app.route("/google853ead28f29bf53f.html")
 def google_verification():
