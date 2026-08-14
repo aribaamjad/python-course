@@ -110,6 +110,9 @@ def contact():
 @app.route("/blog")
 def blog():
     return render_template("blog.html")
+@app.route("/blog/<article>")
+def blog_article(article):
+    return render_template(article + ".html")
 
 # ================= ARTICLES =================
 
