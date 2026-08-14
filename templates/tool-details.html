@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Tool Details - AI Hub</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        <img src="{{ url_for('static', filename='favicon.png') }}"
+             alt="AI Hub Logo">
+        <span>AI Hub</span>
+    </div>
+
+    <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tools">AI Tools</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="tool-details">
+
+    <div class="tool-icon">
+        🤖
+    </div>
+
+    <h1>ChatGPT</h1>
+
+    <div class="tool-rating">
+        ⭐⭐⭐⭐⭐
+    </div>
+
+    <span class="tool-badge">
+        FREE
+    </span>
+
+    <p class="tool-description">
+        ChatGPT is an AI assistant that can help with writing,
+        coding, learning, brainstorming, research and many other tasks.
+    </p>
+
+
+    <div class="tool-info">
+
+        <div>
+            <h3>📂 Category</h3>
+            <p>Chatbot & Productivity</p>
+        </div>
+
+        <div>
+            <h3>💰 Pricing</h3>
+            <p>Free + Paid Plans</p>
+        </div>
+
+        <div>
+            <h3>⭐ Rating</h3>
+            <p>5/5</p>
+        </div>
+
+    </div>
+
+
+    <div class="tool-section">
+
+        <h2>✨ What can you do with ChatGPT?</h2>
+
+        <ul>
+            <li>✍️ Write articles and content</li>
+            <li>💻 Get help with programming</li>
+            <li>📚 Learn new subjects</li>
+            <li>💡 Generate ideas</li>
+            <li>📝 Summarize text</li>
+            <li>🔎 Research topics</li>
+        </ul>
+
+    </div>
+
+
+    <div class="tool-actions">
+
+        <a href="https://chatgpt.com"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <button class="visit-tool">
+                🚀 Visit ChatGPT
+            </button>
+
+        </a>
+
+        <a href="/">
+            <button class="back-tool">
+                ← Back to AI Hub
+            </button>
+        </a>
+
+    </div>
+
+</section>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

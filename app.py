@@ -83,6 +83,10 @@ def tools():
 def about():
     return render_template("about.html")
 
+@app.route("/tool-details")
+def tool_details():
+    return render_template("tool-details.html")
+
 
 # ================= CONTACT =================
 
