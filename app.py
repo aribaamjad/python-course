@@ -97,6 +97,14 @@ def contact():
 
 # ================= ARTICLE =================
 
+@app.route("/robofy-review-2026.html")
+def robofy_review():
+    return render_template("robofy-review-2026.html")
+
+@app.route("/robofy-test")
+def robofy_test():
+    return "ROBofy route is working!"
+
 @app.route("/how-to-write-better-ai-prompts-2026.html")
 def ai_prompts_article():
     return render_template("how-to-write-better-ai-prompts-2026.html")
