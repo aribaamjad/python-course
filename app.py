@@ -39,6 +39,14 @@ def sitemap():
     </url>
 
     <url>
+        <loc>https://python-course-qczt.vercel.app/tool-details</loc>
+    </url>
+
+    <url>
+        <loc>https://python-course-qczt.vercel.app/robofy-review-2026.html</loc>
+    </url>
+
+    <url>
         <loc>https://python-course-qczt.vercel.app/how-to-write-better-ai-prompts-2026.html</loc>
     </url>
 
@@ -83,6 +91,9 @@ def tools():
 def about():
     return render_template("about.html")
 
+
+# ================= TOOL DETAILS =================
+
 @app.route("/tool-details")
 def tool_details():
     return render_template("tool-details.html")
@@ -94,16 +105,18 @@ def tool_details():
 def contact():
     return render_template("contact.html")
 
+# ================= BLOG =================
 
-# ================= ARTICLE =================
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
+
+# ================= ARTICLES =================
 
 @app.route("/robofy-review-2026.html")
 def robofy_review():
     return render_template("robofy-review-2026.html")
 
-@app.route("/robofy-test")
-def robofy_test():
-    return "ROBofy route is working!"
 
 @app.route("/how-to-write-better-ai-prompts-2026.html")
 def ai_prompts_article():
@@ -130,5 +143,11 @@ def test():
 # ================= RUN =================
 
 if __name__ == "__main__":
+
     port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port, debug=False)
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
