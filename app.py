@@ -136,6 +136,22 @@ def ai_image_generators_article():
     return render_template("top-10-free-ai-image-generators.html")
 
 
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
+@app.route("/disclaimer")
+def disclaimer():
+    return render_template("disclaimer.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
+    
 # ================= TEST =================
 
 @app.route("/test")
