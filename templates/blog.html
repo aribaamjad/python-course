@@ -1,253 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Blog - AI Hub</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<link rel="canonical" href="https://python-course-qczt.vercel.app{{ request.path }}">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-03G3V15X7G"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-03G3V15X7G');
-</script>
-<body>
-
-<nav>
-
-<div class="logo">
-    <img src="{{ url_for('static', filename='favicon.png') }}" alt="AI Hub Logo">
-    <span>AI Hub</span>
-</div>
-
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/tools">AI Tools</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/contact">Contact</a></li>
-</ul>
-
-</nav>
-
-<section class="hero">
-
-<h1>AI Hub Blog 📝</h1>
-
-<p>
-Learn everything about Artificial Intelligence with easy guides,
-reviews, tutorials, and the latest AI news.
-</p>
-
-</section>
+from flask import Flask, render_template
+import os
 
-<section class="tools">
-
-<div class="card">
-<h2>Best AI Tools for Students in 2026</h2>
-<p>Discover the top AI tools that help students study faster, write better, and save time.</p>
-<a href="/blog/best-ai-tools-for-students">
-    <button>Read Article</button>
-</a>
-</div>
+app = Flask(__name__)
 
-<div class="card">
-<h2>ChatGPT Beginner Guide</h2>
-<p>Learn how to use ChatGPT effectively for study, coding, and daily work.</p>
-<a href="/blog/chatgpt-beginner-guide">
-    <button>Read Article</button>
-</a>
-</div>
 
-<div class="card">
-<h2>Top 10 Free AI Image Generators</h2>
-<p>Compare the best free AI image generation tools available today.</p>
-<a href="/blog/top-10-free-ai-image-generators">
-    <button>Read Article</button>
-</a>
-</div>
-<div class="card">
+# ================= ROBOTS.TXT =================
 
-<h2>Top 10 Free AI Tools in 2026</h2>
+@app.route("/robots.txt")
+def robots():
+    return """User-agent: *
+Allow: /
+Sitemap: https://python-course-qczt.vercel.app/sitemap.xml
+""", 200, {"Content-Type": "text/plain"}
 
-<p>
-Discover the best free AI tools for students, creators, developers and professionals.
-</p>
 
-<a href="/blog/top-10-free-ai-tools-2026">
-<button>Read Article</button>
-</a>
+# ================= SITEMAP =================
 
-</div>
-<div class="card">
+@app.route("/sitemap.xml")
+def sitemap():
 
-<h2>Claude AI vs ChatGPT (2026)</h2>
+    sitemap_xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<p>
-Compare Claude AI and ChatGPT to find out which AI assistant is better for writing, coding, studying, and productivity.
-</p>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/</loc>
+    </url>
 
-<a href="/blog/claude-vs-chatgpt-2026">
-<button>Read Article</button>
-</a>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/tools</loc>
+    </url>
 
-</div>
-<div class="card">
+    <url>
+        <loc>https://python-course-qczt.vercel.app/about</loc>
+    </url>
 
-<h2>Best AI Tools for Teachers in 2026</h2>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/contact</loc>
+    </url>
 
-<p>
-Discover the best AI tools that help teachers create lessons, presentations, quizzes, and save valuable time.
-</p>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/tool-details</loc>
+    </url>
 
-<a href="/blog/best-ai-tools-for-teachers-2026">
-<button>Read Article</button>
-</a>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/blog</loc>
+    </url>
 
-</div>
-<div class="card">
+    <url>
+        <loc>https://python-course-qczt.vercel.app/robofy-review-2026.html</loc>
+    </url>
 
-<h2>ChatGPT vs Gemini (2026)</h2>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/how-to-write-better-ai-prompts-2026.html</loc>
+    </url>
 
-<p>
-Compare ChatGPT and Google Gemini to discover which AI assistant is better for writing, coding, studying, and productivity.
-</p>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/top-10-free-ai-tools-2026.html</loc>
+    </url>
 
-<a href="/blog/chatgpt-vs-gemini-2026">
-<button>Read Article</button>
-</a>
+    <url>
+        <loc>https://python-course-qczt.vercel.app/top-10-free-ai-image-generators.html</loc>
+    </url>
 
-</div>
-<div class="card">
+</urlset>
+"""
 
-<h2>Best AI Resume Builders in 2026</h2>
+    return sitemap_xml, 200, {"Content-Type": "application/xml"}
 
-<p>
-Discover the best AI resume builders that help you create professional resumes quickly and improve your job opportunities.
-</p>
 
-<a href="/blog/best-ai-resume-builders-2026">
-<button>Read Article</button>
-</a>
+# ================= GOOGLE VERIFICATION =================
 
-</div>
-<div class="card">
+@app.route("/google853ead28f29bf53f.html")
+def google_verification():
+    return "google-site-verification: google853ead28f29bf53f.html"
 
-<h2>Best Free AI Video Generators in 2026</h2>
 
-<p>
-Discover the best free AI video generators for YouTube, TikTok, Instagram Reels, and professional content creation.
-</p>
+# ================= HOME =================
 
-<a href="/blog/best-free-ai-video-generators-2026">
-<button>Read Article</button>
-</a>
+@app.route("/")
+def home():
+    return render_template("index.html")
 
-</div>
-<div class="card">
 
-<h2>How to Write Better AI Prompts (2026)</h2>
+# ================= TOOLS =================
 
-<p>
-Learn simple techniques to write better prompts for ChatGPT, Gemini, Claude, and other AI tools to get more accurate results.
-</p>
+@app.route("/tools")
+def tools():
+    return render_template("tools.html")
 
-<a href="/blog/how-to-write-better-ai-prompts-2026">
-<button>Read Article</button>
-</a>
 
-</div>
-<div class="card">
+# ================= ABOUT =================
 
-<h2>Best AI Tools for YouTubers in 2026</h2>
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
-<p>
-Discover the best AI tools for YouTubers to create scripts, edit videos, generate thumbnails, and grow your YouTube channel.
-</p>
 
-<a href="/blog/best-ai-tools-for-youtubers-2026">
-<button>Read Article</button>
-</a>
+# ================= TOOL DETAILS =================
 
-</div>
-<div class="card">
+@app.route("/tool-details")
+def tool_details():
+    return render_template("tool-details.html")
 
-<h2>Best AI Tools for Content Creators in 2026</h2>
 
-<p>
-Explore the best AI tools for bloggers, YouTubers, marketers, and content creators.
-</p>
+# ================= CONTACT =================
 
-<a href="/blog/best-ai-tools-for-content-creators-2026">
-<button>Read Article</button>
-</a>
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
-</div>
-<div class="card">
 
-<h2>Best AI Coding Assistants in 2026</h2>
+# ================= BLOG HOME =================
 
-<p>
-Discover the best AI coding assistants for Python, JavaScript, Java, C++, debugging, and software development.
-</p>
+@app.route("/blog")
+def blog():
+    return render_template("blog.html")
 
-<a href="/blog/best-ai-coding-assistants-2026">
-<button>Read Article</button>
-</a>
 
-</div>
-<div class="card">
+# ================= BLOG ARTICLES =================
+#
+# Your blog.html uses links like:
+#
+# /blog/best-ai-tools-for-students
+# /blog/chatgpt-beginner-guide
+# /blog/top-10-free-ai-image-generators
+#
+# This route automatically opens the matching HTML
+# file from the templates folder.
+#
+# Example:
+# /blog/chatgpt-beginner-guide
+#       ↓
+# templates/chatgpt-beginner-guide.html
+#
 
-<h2>Best AI Tools for Freelancers in 2026</h2>
+@app.route("/blog/<article>")
+def blog_article(article):
+    return render_template(article + ".html")
 
-<p>
-Discover the best AI tools that help freelancers write faster, design better, manage clients, and increase productivity.
-</p>
 
-<a href="/blog/best-ai-tools-for-freelancers-2026">
-<button>Read Article</button>
-</a>
+# ================= ROBofy ARTICLE =================
+#
+# This is kept separately because its current URL
+# contains .html.
 
-</div>
-<div class="card">
+@app.route("/robofy-review-2026.html")
+def robofy_review():
+    return render_template("robofy-review-2026.html")
 
-<h2>Best AI Tools for Small Businesses in 2026</h2>
 
-<p>
-Explore the best AI tools for marketing, customer support, automation, and business growth.
-</p>
+# ================= EXISTING ARTICLES =================
 
-<a href="/blog/best-ai-tools-for-small-businesses-2026">
-<button>Read Article</button>
-</a>
+@app.route("/how-to-write-better-ai-prompts-2026.html")
+def ai_prompts_article():
+    return render_template("how-to-write-better-ai-prompts-2026.html")
 
-</div>
-</section>
 
-<footer class="footer">
+@app.route("/top-10-free-ai-tools-2026.html")
+def free_ai_tools_article():
+    return render_template("top-10-free-ai-tools-2026.html")
 
-<div class="footer-links">
-<a href="/">Home</a> |
-<a href="/tools">AI Tools</a> |
-<a href="/blog">Blog</a> |
-<a href="/about">About</a> |
-<a href="/contact">Contact</a> |
-<a href="/privacy">Privacy Policy</a> |
-<a href="/terms">Terms & Conditions</a> |
-<a href="/disclaimer">Disclaimer</a>
-</div>
 
-<div class="footer-bottom">
-© 2026 AI Hub. All Rights Reserved.
-</div>
+@app.route("/top-10-free-ai-image-generators.html")
+def ai_image_generators_article():
+    return render_template("top-10-free-ai-image-generators.html")
 
-</footer>
 
-</body>
-</html>
+# ================= TEST =================
+
+@app.route("/test")
+def test():
+    return "Website is working!"
+
+
+# ================= RUN =================
+
+if __name__ == "__main__":
+
+    port = int(os.environ.get("PORT", 8080))
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
