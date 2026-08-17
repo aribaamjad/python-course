@@ -1,186 +1,433 @@
-from flask import Flask, render_template
-import os
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-app = Flask(__name__)
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>AI Hub Blog - Latest AI Guides & Reviews</title>
 
-# ================= ROBOTS.TXT =================
+    <meta name="description"
+          content="Read the latest AI tool reviews, guides, tips and tutorials on AI Hub.">
 
-@app.route("/robots.txt")
-def robots():
-    return """User-agent: *
-Allow: /
-Sitemap: https://python-course-qczt.vercel.app/sitemap.xml
-""", 200, {"Content-Type": "text/plain"}
+    <meta name="robots" content="index, follow">
 
+    <link rel="canonical"
+          href="https://python-course-qczt.vercel.app/blog">
 
-# ================= SITEMAP =================
+    <link rel="icon"
+          href="{{ url_for('static', filename='favicon.png') }}">
 
-@app.route("/sitemap.xml")
-def sitemap():
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 
-    sitemap_xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <style>
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/</loc>
-    </url>
+        .blog-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/tools</loc>
-    </url>
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/about</loc>
-    </url>
+        .blog-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/contact</loc>
-    </url>
+        .blog-header p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/tool-details</loc>
-    </url>
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/blog</loc>
-    </url>
+        .blog-card {
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(128, 128, 128, 0.10);
+            border: 1px solid rgba(128, 128, 128, 0.15);
+            transition: 0.3s;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/robofy-review-2026.html</loc>
-    </url>
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/how-to-write-better-ai-prompts-2026.html</loc>
-    </url>
+        .blog-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/top-10-free-ai-tools-2026.html</loc>
-    </url>
+        .blog-card h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
 
-    <url>
-        <loc>https://python-course-qczt.vercel.app/top-10-free-ai-image-generators.html</loc>
-    </url>
+        .blog-card p {
+            line-height: 1.6;
+            opacity: 0.85;
+        }
 
-</urlset>
-"""
+        .read-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 20px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+            background: #6c5ce7;
+            color: white;
+        }
 
-    return sitemap_xml, 200, {"Content-Type": "application/xml"}
+        .read-button:hover {
+            opacity: 0.85;
+        }
 
+        @media (max-width: 900px) {
 
-# ================= GOOGLE VERIFICATION =================
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-@app.route("/google853ead28f29bf53f.html")
-def google_verification():
-    return "google-site-verification: google853ead28f29bf53f.html"
+        }
 
+        @media (max-width: 600px) {
 
-# ================= HOME =================
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+            .blog-header h1 {
+                font-size: 30px;
+            }
 
+        }
 
-# ================= TOOLS =================
+    </style>
 
-@app.route("/tools")
-def tools():
-    return render_template("tools.html")
+</head>
 
+<body>
 
-# ================= ABOUT =================
+<!-- ================= NAVBAR ================= -->
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
+<nav>
 
+    <div class="logo">
 
-# ================= TOOL DETAILS =================
+        <img
+            src="{{ url_for('static', filename='favicon.png') }}"
+            alt="AI Hub Logo"
+        >
 
-@app.route("/tool-details")
-def tool_details():
-    return render_template("tool-details.html")
+        <span>AI Hub</span>
 
+    </div>
 
-# ================= CONTACT =================
+    <ul>
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+        <li>
+            <a href="/">Home</a>
+        </li>
 
+        <li>
+            <a href="/tools">AI Tools</a>
+        </li>
 
-# ================= BLOG HOME =================
+        <li>
+            <a href="/blog">Blog</a>
+        </li>
 
-@app.route("/blog")
-def blog():
-    return render_template("blog.html")
+        <li>
+            <a href="/about">About</a>
+        </li>
 
+        <li>
+            <a href="/contact">Contact</a>
+        </li>
 
-# ================= BLOG ARTICLES =================
-#
-# Your blog.html uses links like:
-#
-# /blog/best-ai-tools-for-students
-# /blog/chatgpt-beginner-guide
-# /blog/top-10-free-ai-image-generators
-#
-# This route automatically opens the matching HTML
-# file from the templates folder.
-#
-# Example:
-# /blog/chatgpt-beginner-guide
-#       ↓
-# templates/chatgpt-beginner-guide.html
-#
+    </ul>
 
-@app.route("/blog/<article>")
-def blog_article(article):
-    return render_template(article + ".html")
-
-
-# ================= ROBofy ARTICLE =================
-#
-# This is kept separately because its current URL
-# contains .html.
-
-@app.route("/robofy-review-2026.html")
-def robofy_review():
-    return render_template("robofy-review-2026.html")
-
-
-# ================= EXISTING ARTICLES =================
-
-@app.route("/how-to-write-better-ai-prompts-2026.html")
-def ai_prompts_article():
-    return render_template("how-to-write-better-ai-prompts-2026.html")
-
-
-@app.route("/top-10-free-ai-tools-2026.html")
-def free_ai_tools_article():
-    return render_template("top-10-free-ai-tools-2026.html")
-
-
-@app.route("/top-10-free-ai-image-generators.html")
-def ai_image_generators_article():
-    return render_template("top-10-free-ai-image-generators.html")
+</nav>
 
 
-# ================= TEST =================
+<!-- ================= BLOG ================= -->
 
-@app.route("/test")
-def test():
-    return "Website is working!"
+<main class="blog-container">
+
+    <header class="blog-header">
+
+        <h1>🤖 AI Hub Blog</h1>
+
+        <p>
+            AI tool reviews, useful guides, tutorials and the latest
+            artificial intelligence tips.
+        </p>
+
+    </header>
 
 
-# ================= RUN =================
+    <section class="blog-grid">
 
-if __name__ == "__main__":
 
-    port = int(os.environ.get("PORT", 8080))
+        <!-- ROBofy -->
 
-    app.run(
-        host="0.0.0.0",
-        port=port,
-        debug=False
-    )
+        <article class="blog-card">
+
+            <div class="blog-icon">🤖</div>
+
+            <h2>Robofy AI Review 2026</h2>
+
+            <p>
+                Learn what Robofy AI is, its benefits, chatbot
+                features and how it can help businesses automate
+                customer interactions.
+            </p>
+
+            <a
+                class="read-button"
+                href="/robofy-review-2026.html"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- AI PROMPTS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">✍️</div>
+
+            <h2>How to Write Better AI Prompts</h2>
+
+            <p>
+                Learn simple techniques for writing better AI prompts
+                and getting more useful results from AI tools.
+            </p>
+
+            <a
+                class="read-button"
+                href="/how-to-write-better-ai-prompts-2026.html"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- FREE AI TOOLS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">🚀</div>
+
+            <h2>Top 10 Free AI Tools in 2026</h2>
+
+            <p>
+                Discover useful free AI tools for writing, coding,
+                productivity, images and everyday tasks.
+            </p>
+
+            <a
+                class="read-button"
+                href="/top-10-free-ai-tools-2026.html"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- AI IMAGE GENERATORS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">🎨</div>
+
+            <h2>Top 10 Free AI Image Generators</h2>
+
+            <p>
+                Explore popular AI image generators that can help
+                you create impressive images from text prompts.
+            </p>
+
+            <a
+                class="read-button"
+                href="/top-10-free-ai-image-generators.html"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- STUDENTS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">🎓</div>
+
+            <h2>Best AI Tools for Students</h2>
+
+            <p>
+                Discover AI tools that can help students with
+                learning, research, writing and productivity.
+            </p>
+
+            <a
+                class="read-button"
+                href="/blog/best-ai-tools-for-students"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- CHATGPT -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">💬</div>
+
+            <h2>ChatGPT Beginner Guide</h2>
+
+            <p>
+                A simple beginner-friendly guide to understanding
+                ChatGPT and using it effectively.
+            </p>
+
+            <a
+                class="read-button"
+                href="/blog/chatgpt-beginner-guide"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- CODING -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">💻</div>
+
+            <h2>Best AI Coding Assistants 2026</h2>
+
+            <p>
+                Explore AI coding assistants that can help developers
+                write, understand and improve their code.
+            </p>
+
+            <a
+                class="read-button"
+                href="/blog/best-ai-coding-assistants-2026"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- CONTENT CREATORS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">🎥</div>
+
+            <h2>Best AI Tools for Content Creators</h2>
+
+            <p>
+                Useful AI tools for creating content, images, videos,
+                writing and social media posts.
+            </p>
+
+            <a
+                class="read-button"
+                href="/blog/best-ai-tools-for-content-creators-2026"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+        <!-- FREELANCERS -->
+
+        <article class="blog-card">
+
+            <div class="blog-icon">💼</div>
+
+            <h2>Best AI Tools for Freelancers</h2>
+
+            <p>
+                Discover AI tools that can help freelancers save time,
+                create content and improve their workflow.
+            </p>
+
+            <a
+                class="read-button"
+                href="/blog/best-ai-tools-for-freelancers-2026"
+            >
+                Read Article →
+            </a>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-links">
+
+        <a href="/">Home</a> |
+
+        <a href="/tools">AI Tools</a> |
+
+        <a href="/blog">Blog</a> |
+
+        <a href="/about">About</a> |
+
+        <a href="/contact">Contact</a> |
+
+        <a href="/privacy">Privacy Policy</a> |
+
+        <a href="/terms">Terms & Conditions</a> |
+
+        <a href="/disclaimer">Disclaimer</a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 AI Hub. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
