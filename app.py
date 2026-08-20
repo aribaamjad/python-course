@@ -114,6 +114,12 @@ def blog():
 def blog_article(article):
     return render_template(article + ".html")
 
+# ================= AI PROMPTS =================
+
+@app.route("/prompts")
+def prompts():
+    return render_template("prompts.html")
+
 # ================= ARTICLES =================
 
 @app.route("/robofy-review-2026.html")
