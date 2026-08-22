@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompts | AI Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0b0f19;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 42px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #151b2b;
+            border: 1px solid #292f45;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .card h2 {
+            margin-top: 10px;
+        }
+
+        .prompt {
+            background: #080b12;
+            padding: 15px;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #6c5ce7;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<h1 style="color:red; text-align:center;">PROMPTS TEST</h1>
+<div class="container">
+
+    <h1>🚀 AI Prompt Directory</h1>
+
+    <div class="grid">
+
+        <div class="card">
+            <h2>✍️ SEO Blog Writer</h2>
+
+            <p class="prompt" id="prompt1">
+                Act as an expert SEO content writer. Write a high-quality,
+                original and helpful blog article about [TOPIC]. Include
+                a compelling title, introduction, H2 and H3 headings,
+                practical examples, useful tips and a strong conclusion.
+            </p>
+
+            <button onclick="copyPrompt('prompt1', this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h2>💻 Code Debugger</h2>
+
+            <p class="prompt" id="prompt2">
+                Act as a senior software engineer. Analyze the following
+                code: [PASTE CODE]. Find syntax errors, logical problems,
+                security issues and performance problems. Explain the
+                problems and provide a corrected version.
+            </p>
+
+            <button onclick="copyPrompt('prompt2', this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+
+        <div class="card">
+            <h2>📱 Social Media Strategist</h2>
+
+            <p class="prompt" id="prompt3">
+                Act as an expert social media marketing strategist.
+                Create 10 unique content ideas for [BRAND] targeting
+                [AUDIENCE]. Include a strong hook, caption, call to
+                action and relevant hashtags for every idea.
+            </p>
+
+            <button onclick="copyPrompt('prompt3', this)">
+                📋 Copy Prompt
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+function copyPrompt(id, button) {
+
+    const prompt = document.getElementById(id).innerText;
+
+    navigator.clipboard.writeText(prompt).then(function() {
+
+        const original = button.innerText;
+
+        button.innerText = "✅ Copied!";
+
+        setTimeout(function() {
+            button.innerText = original;
+        }, 2000);
+
+    });
+}
+</script>
+
+</body>
+</html>
