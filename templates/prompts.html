@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Prompts | AI Hub</title>
 
     <style>
@@ -62,23 +63,41 @@
             cursor: pointer;
         }
 
+        button:hover {
+            opacity: 0.85;
+        }
+
         @media (max-width: 800px) {
             .grid {
                 grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+
+            h1 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 
 <body>
+
 <h1 style="color:red; text-align:center;">PROMPTS TEST</h1>
+
 <div class="container">
 
     <h1>🚀 AI Prompt Directory</h1>
 
     <div class="grid">
 
+
+        <!-- PROMPT 1 -->
+
         <div class="card">
+
             <h2>✍️ SEO Blog Writer</h2>
 
             <p class="prompt" id="prompt1">
@@ -91,10 +110,14 @@
             <button onclick="copyPrompt('prompt1', this)">
                 📋 Copy Prompt
             </button>
+
         </div>
 
 
+        <!-- PROMPT 2 -->
+
         <div class="card">
+
             <h2>💻 Code Debugger</h2>
 
             <p class="prompt" id="prompt2">
@@ -107,10 +130,14 @@
             <button onclick="copyPrompt('prompt2', this)">
                 📋 Copy Prompt
             </button>
+
         </div>
 
 
+        <!-- PROMPT 3 -->
+
         <div class="card">
+
             <h2>📱 Social Media Strategist</h2>
 
             <p class="prompt" id="prompt3">
@@ -123,7 +150,485 @@
             <button onclick="copyPrompt('prompt3', this)">
                 📋 Copy Prompt
             </button>
+
         </div>
+
+
+        <!-- PROMPT 4 -->
+
+        <div class="card">
+
+            <h2>💼 Job Interview Coach</h2>
+
+            <p class="prompt" id="prompt4">
+                Act as an expert career coach and professional job
+                interview trainer. I am applying for the position of
+                [JOB TITLE] at [COMPANY]. My experience and background
+                are: [DESCRIBE YOUR EXPERIENCE]. Analyze the job
+                requirements and create a realistic interview
+                preparation plan. Give me the 15 most likely interview
+                questions for this role, including technical,
+                behavioral and situational questions where relevant.
+                For each question, provide a strong example answer
+                using the STAR method when appropriate. Then conduct
+                a mock interview with me one question at a time.
+                After each answer I give, evaluate my response,
+                identify what I did well, explain what I should
+                improve, and provide a stronger example answer.
+                Keep the feedback practical, honest and specific
+                to the job I am applying for.
+            </p>
+
+            <button onclick="copyPrompt('prompt4', this)">
+                📋 Copy Prompt
+            </button>
+
+        </div>
+
+
+        <!-- PROMPT 5 -->
+
+        <div class="card">
+
+            <h2>📧 Professional Email Writer</h2>
+
+            <p class="prompt" id="prompt5">
+                Act as an expert professional communication writer.
+                Write a clear, natural and professional email based
+                on the following information: [DESCRIBE THE SITUATION].
+                The recipient is [RECIPIENT] and my main goal is [GOAL].
+                Use a tone that is [FORMAL / FRIENDLY / CONFIDENT /
+                POLITE]. Keep the email concise and easy to understand.
+                Create a compelling subject line and organize the
+                message logically. Avoid unnecessary filler, overly
+                complicated language, clichés and robotic wording.
+                Make the email sound like it was written by a real
+                professional. If important information is missing,
+                list the missing details before writing the final email.
+            </p>
+
+            <button onclick="copyPrompt('prompt5', this)">
+                📋 Copy Prompt
+            </button>
+
+        </div>
+
+
+        <!-- PROMPT 6 -->
+
+        <div class="card">
+
+            <h2>🎓 Personal AI Study Tutor</h2>
+
+            <p class="prompt" id="prompt6">
+                Act as my personal expert tutor for [SUBJECT OR TOPIC].
+                My current knowledge level is [BEGINNER / INTERMEDIATE /
+                ADVANCED] and my goal is [EXAM PREPARATION / LEARNING /
+                HOMEWORK / SKILL DEVELOPMENT]. First, explain the topic
+                in simple language without unnecessary jargon. Then
+                break it into smaller concepts and teach them step by
+                step. Use practical examples, analogies and simple
+                explanations where helpful. After teaching each major
+                concept, give me a few practice questions and wait for
+                my answers before revealing the solutions. Identify my
+                mistakes and explain why they are wrong. At the end,
+                create a short revision summary and a personalized
+                study plan based on the areas I need to improve most.
+            </p>
+
+            <button onclick="copyPrompt('prompt6', this)">
+                📋 Copy Prompt
+            </button>
+
+        </div>
+        <!-- PROMPT 5 -->
+
+<div class="card">
+
+    <h2>🎨 AI Image Generator</h2>
+
+    <p class="prompt" id="prompt5">
+        Act as an expert AI image prompt designer and creative art
+        director. Create a highly detailed image-generation prompt
+        for [SUBJECT OR IDEA]. The image should have a professional
+        visual style suitable for [PURPOSE, such as social media,
+        website, advertisement, thumbnail, or personal project].
+        Clearly describe the subject, environment, composition,
+        camera angle, lighting, colors, mood, textures, background,
+        depth of field, and important visual details. Make the result
+        visually realistic, polished, and attention-grabbing.
+        Include suitable photography or cinematic terminology when
+        appropriate. Avoid vague descriptions and unnecessary words.
+        Return one final copy-ready prompt that can be used with
+        ChatGPT, Gemini, Midjourney, Flux, or another AI image
+        generator.
+    </p>
+
+    <button onclick="copyPrompt('prompt5', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+<!-- PROMPT 8 -->
+
+<div class="card">
+
+    <h2>💼 AI Resume & Job Application Writer</h2>
+
+    <p class="prompt" id="prompt8">
+        Act as an expert resume writer and career coach. Create a professional,
+        ATS-friendly resume for the following job position: [JOB TITLE].
+        Here is my current experience, skills, education and achievements:
+        [PASTE YOUR INFORMATION]. Analyze the job requirements and naturally
+        match my relevant skills and experience to the position without
+        inventing qualifications or experience. Write a strong professional
+        summary, achievement-focused bullet points, relevant skills section,
+        and clear work experience descriptions using concise action verbs.
+        Optimize the resume for applicant tracking systems while keeping it
+        natural and easy for recruiters to read. Also identify important
+        keywords from the job description that should be included. Finally,
+        provide 5 suggestions to improve my chances of getting an interview.
+    </p>
+
+    <button onclick="copyPrompt('prompt8', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+<!-- PROMPT 9 -->
+
+<div class="card">
+
+    <h2>📱 Instagram Content Creator</h2>
+
+    <p class="prompt" id="prompt9">
+        Act as an expert Instagram content strategist and copywriter.
+        Create a complete Instagram content package for [BRAND, BUSINESS,
+        OR PERSONAL ACCOUNT] in the niche of [NICHE]. The target audience
+        is [TARGET AUDIENCE] and the main goal is [GOAL]. Generate 10
+        engaging content ideas including a powerful hook, Instagram caption,
+        suggested content format such as Reel, Carousel, or Image, a clear
+        call to action, and relevant hashtags for each post. Make every idea
+        original, useful, easy to understand, and designed to encourage
+        engagement, saves, shares, comments, or profile visits. Avoid
+        generic or repetitive content. Use a natural human writing style
+        and make the content suitable for Instagram.
+    </p>
+
+    <button onclick="copyPrompt('prompt9', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+<!-- PROMPT 10 -->
+
+<div class="card">
+
+    <h2>🎬 YouTube Video Script Writer</h2>
+
+    <p class="prompt" id="prompt10">
+        Act as an expert YouTube scriptwriter and audience-retention
+        strategist. Write an engaging, original YouTube video script about
+        [TOPIC] for [TARGET AUDIENCE]. The target video length is
+        [VIDEO LENGTH] minutes. Start with a powerful hook that creates
+        curiosity within the first few seconds. Structure the script with
+        a clear introduction, engaging main sections, useful examples,
+        smooth transitions, and a memorable conclusion. Keep the language
+        natural and conversational so it sounds like a real creator is
+        speaking. Avoid unnecessary repetition and filler. Include
+        suggestions for visual examples, B-roll, on-screen text, and
+        moments where audience engagement can be encouraged. End with a
+        natural call to action asking viewers to like, subscribe, comment,
+        or watch another related video.
+    </p>
+
+    <button onclick="copyPrompt('prompt10', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+<!-- PROMPT 11 -->
+
+<div class="card">
+
+    <h2>🎓 Study & Exam Assistant</h2>
+
+    <p class="prompt" id="prompt11">
+        Act as an expert study tutor and exam preparation assistant.
+        Help me understand [SUBJECT OR TOPIC] at a [BEGINNER/INTERMEDIATE/
+        ADVANCED] level. Explain the topic in simple and clear language,
+        breaking difficult concepts into smaller parts. Use practical
+        examples, easy-to-remember explanations, important definitions,
+        key facts, and common mistakes students should avoid. Then create
+        a concise revision summary followed by [NUMBER] practice questions
+        ranging from easy to difficult. Provide the correct answers and
+        explain why each answer is correct. Focus on understanding and
+        learning rather than simply memorizing information. If the topic
+        contains formulas, processes, or steps, explain them clearly and
+        show a simple example of how to use them.
+    </p>
+
+    <button onclick="copyPrompt('prompt11', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+<!-- PROMPT 12 -->
+
+<div class="card">
+
+    <h2>📧 Professional Email Writer</h2>
+
+    <p class="prompt" id="prompt12">
+        Act as an expert professional email writer. Write a clear,
+        professional and natural email based on this situation:
+        [DESCRIBE SITUATION]. The recipient is [RECIPIENT] and my
+        goal is [GOAL]. Use a [FORMAL / FRIENDLY / POLITE / CONFIDENT]
+        tone. Create a concise subject line and organize the email
+        clearly. Avoid unnecessary words, robotic language and clichés.
+        Make the email sound natural and professional. If important
+        information is missing, identify it before writing the final
+        email.
+    </p>
+
+    <button onclick="copyPrompt('prompt12', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 13 -->
+
+<div class="card">
+
+    <h2>📣 Marketing Campaign Planner</h2>
+
+    <p class="prompt" id="prompt13">
+        Act as an expert digital marketing strategist. Create a complete
+        marketing campaign for [PRODUCT OR SERVICE]. The target audience
+        is [TARGET AUDIENCE] and the main goal is [GOAL]. Develop the
+        campaign message, customer pain points, unique value proposition,
+        content ideas, social media strategy, call-to-action ideas and
+        a simple promotional plan. Suggest 10 content topics that can
+        attract the target audience and explain the purpose of each.
+        Keep the strategy practical, realistic and focused on measurable
+        results. Do not use misleading claims or unrealistic promises.
+    </p>
+
+    <button onclick="copyPrompt('prompt13', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 14 -->
+
+<div class="card">
+
+    <h2>🔎 Research Assistant</h2>
+
+    <p class="prompt" id="prompt14">
+        Act as a professional research assistant. Help me research
+        [TOPIC] for [PURPOSE]. First, break the topic into the most
+        important questions that need to be answered. Then organize
+        the research into clear sections covering key facts, important
+        concepts, different perspectives, examples and practical
+        conclusions. Clearly separate established information from
+        uncertain or disputed claims. Do not invent statistics,
+        quotations or sources. If current information is required,
+        tell me which facts should be verified with reliable sources.
+        Finish with a concise summary of the most important findings.
+    </p>
+
+    <button onclick="copyPrompt('prompt14', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 15 -->
+
+<div class="card">
+
+    <h2>⚡ Productivity Planner</h2>
+
+    <p class="prompt" id="prompt15">
+        Act as an expert productivity coach. Help me create a realistic
+        productivity plan for [GOAL]. I have [NUMBER] hours available
+        each day and my main responsibilities are [LIST RESPONSIBILITIES].
+        Break my goal into practical tasks and prioritize them based on
+        importance and urgency. Create a daily and weekly schedule with
+        realistic time blocks, breaks and buffer time. Identify tasks
+        that can be simplified, automated or postponed. Keep the plan
+        flexible and sustainable rather than overwhelming. At the end,
+        provide a simple checklist I can use to track my progress.
+    </p>
+
+    <button onclick="copyPrompt('prompt15', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 16 -->
+
+<div class="card">
+
+    <h2>💻 Coding Project Planner</h2>
+
+    <p class="prompt" id="prompt16">
+        Act as a senior software architect and development mentor.
+        Help me plan a software project called [PROJECT NAME]. The
+        project should accomplish [PROJECT GOAL] and will use
+        [PROGRAMMING LANGUAGE / TECHNOLOGY]. Break the project into
+        manageable development stages. Recommend a suitable folder
+        structure, important components, database or data requirements,
+        APIs if needed, security considerations and testing strategy.
+        Explain the purpose of each major component in simple language.
+        Create a step-by-step development roadmap and identify common
+        technical mistakes I should avoid. Do not add unnecessary
+        complexity.
+    </p>
+
+    <button onclick="copyPrompt('prompt16', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 17 -->
+
+<div class="card">
+
+    <h2>🧠 Brainstorming Idea Generator</h2>
+
+    <p class="prompt" id="prompt17">
+        Act as a creative brainstorming expert. Generate 20 original
+        ideas for [PROJECT, BUSINESS, CONTENT OR PROBLEM]. The target
+        audience is [AUDIENCE] and the main objective is [OBJECTIVE].
+        Group the ideas into practical categories and give each idea
+        a short explanation, potential benefit and suggested first
+        step. Avoid generic, repetitive or unrealistic suggestions.
+        Include a mix of simple ideas that can be implemented quickly
+        and more ambitious ideas for long-term growth. Prioritize ideas
+        that provide genuine value to the target audience.
+    </p>
+
+    <button onclick="copyPrompt('prompt17', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 18 -->
+
+<div class="card">
+
+    <h2>🌍 Translation & Localization Expert</h2>
+
+    <p class="prompt" id="prompt18">
+        Act as a professional translator and localization specialist.
+        Translate the following text from [SOURCE LANGUAGE] into
+        [TARGET LANGUAGE]: [PASTE TEXT]. Preserve the original meaning,
+        tone, context and intent rather than translating word-for-word
+        when that would sound unnatural. Adapt idioms, expressions and
+        cultural references when appropriate for the target audience.
+        Keep names, numbers and technical terms accurate. After the
+        translation, briefly identify any phrases that required
+        localization or special interpretation. Do not add information
+        that is not present in the original text.
+    </p>
+
+    <button onclick="copyPrompt('prompt18', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 19 -->
+
+<div class="card">
+
+    <h2>📊 Data Analysis Assistant</h2>
+
+    <p class="prompt" id="prompt19">
+        Act as an expert data analysis assistant. Analyze the following
+        dataset or information: [PASTE DATA]. First, explain what the
+        dataset contains and identify the most important variables.
+        Then identify meaningful patterns, trends, unusual values,
+        relationships and possible problems in the data. Present the
+        findings in clear language and use tables when helpful. Do not
+        invent missing values or conclusions that cannot be supported
+        by the provided data. Clearly state any limitations. Finish
+        with the most important insights and practical recommendations
+        based only on the available information.
+    </p>
+
+    <button onclick="copyPrompt('prompt19', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 20 -->
+
+<div class="card">
+
+    <h2>📑 Presentation Maker</h2>
+
+    <p class="prompt" id="prompt20">
+        Act as an expert presentation designer and communication
+        strategist. Create a professional presentation about [TOPIC]
+        for [AUDIENCE]. The presentation should contain [NUMBER] slides.
+        For each slide, provide a clear title, concise bullet points,
+        speaker notes and a suggestion for an appropriate visual,
+        chart, diagram or example when useful. Organize the information
+        in a logical story from introduction to conclusion. Avoid
+        overcrowding slides with text. Use simple, engaging language
+        and highlight the most important information. Finish with a
+        strong conclusion and a clear call to action when appropriate.
+    </p>
+
+    <button onclick="copyPrompt('prompt20', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
+
+<!-- PROMPT 21 -->
+
+<div class="card">
+
+    <h2>🏢 Small Business AI Assistant</h2>
+
+    <p class="prompt" id="prompt21">
+        Act as an experienced small business consultant. Help me improve
+        my business, [BUSINESS NAME OR TYPE], which sells [PRODUCT OR
+        SERVICE] to [TARGET CUSTOMERS]. My main challenge is [CHALLENGE].
+        Analyze the situation and suggest practical ways to improve
+        customer acquisition, marketing, operations, productivity and
+        customer experience. Prioritize ideas based on potential impact,
+        cost and difficulty of implementation. Create a simple 30-day
+        action plan with specific tasks and measurable goals. Avoid
+        unrealistic promises and focus on strategies that a small
+        business can realistically implement.
+    </p>
+
+    <button onclick="copyPrompt('prompt21', this)">
+        📋 Copy Prompt
+    </button>
+
+</div>
+
 
     </div>
 
@@ -131,6 +636,7 @@
 
 
 <script>
+
 function copyPrompt(id, button) {
 
     const prompt = document.getElementById(id).innerText;
@@ -145,8 +651,14 @@ function copyPrompt(id, button) {
             button.innerText = original;
         }, 2000);
 
+    }).catch(function() {
+
+        alert("Unable to copy the prompt.");
+
     });
+
 }
+
 </script>
 
 </body>
