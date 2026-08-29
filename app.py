@@ -58,8 +58,11 @@ def sitemap():
         <loc>https://python-course-qczt.vercel.app/top-10-free-ai-image-generators.html</loc>
     </url>
 
-</urlset>
-"""
+    <url>
+        <loc>https://python-course-qczt.vercel.app/prompts</loc>
+    </url>
+
+</urlset>"""
 
     return sitemap_xml, 200, {"Content-Type": "application/xml"}
 
