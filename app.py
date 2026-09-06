@@ -62,6 +62,10 @@ def sitemap():
         <loc>https://python-course-qczt.vercel.app/prompts</loc>
     </url>
 
+    <url>
+    <loc>https://python-course-qczt.vercel.app/best-ai-automation-tools-small-businesses-2026.html</loc></url>
+     <url>
+     
 </urlset>"""
 
     return sitemap_xml, 200, {"Content-Type": "application/xml"}
@@ -144,6 +148,9 @@ def free_ai_tools_article():
 def ai_image_generators_article():
     return render_template("top-10-free-ai-image-generators.html")
 
+@app.route("/best-ai-automation-tools-small-businesses-2026.html")
+def ai_automation_small_business_article():
+    return render_template("best-ai-automation-tools-small-businesses-2026.html")
 
 @app.route("/privacy")
 def privacy():
