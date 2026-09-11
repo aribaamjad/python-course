@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Word & Character Counter | AI Hub</title>
+
+    <meta name="description"
+          content="Free live word and character counter. Count words, characters and paragraphs instantly as you type or paste text.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0f19;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: #111827;
+            border-bottom: 1px solid #1f2937;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #8b5cf6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero p {
+            color: #b6bdc9;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .counter-box {
+            background: #111827;
+            border: 1px solid #273244;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            resize: vertical;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #374151;
+            background: #0b1220;
+            color: #ffffff;
+            font-size: 17px;
+            line-height: 1.7;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #8b5cf6;
+        }
+
+        textarea::placeholder {
+            color: #6b7280;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .stat {
+            background: #0b1220;
+            border: 1px solid #273244;
+            border-radius: 14px;
+            padding: 22px;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 32px;
+            font-weight: bold;
+            color: #a78bfa;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            color: #9ca3af;
+            border-top: 1px solid #1f2937;
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            .container {
+                margin: 35px auto;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .counter-box {
+                padding: 20px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🤖 AI Hub</div>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/tools">AI Tools</a>
+        <a href="/blog">Blog</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <h1>Live <span>Word & Character Counter</span></h1>
+
+        <p>
+            Type or paste your text below and instantly see your
+            word, character and paragraph counts.
+        </p>
+    </div>
+
+    <div class="counter-box">
+
+        <textarea
+            id="textInput"
+            placeholder="Start typing or paste your text here..."
+            spellcheck="false"></textarea>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span class="stat-number" id="wordCount">0</span>
+                <span class="stat-label">Words</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-number" id="characterCount">0</span>
+                <span class="stat-label">Characters</span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-number" id="paragraphCount">0</span>
+                <span class="stat-label">Paragraphs</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 AI Hub. All Rights Reserved.
+</footer>
+
+<script>
+
+const textInput = document.getElementById("textInput");
+const wordCount = document.getElementById("wordCount");
+const characterCount = document.getElementById("characterCount");
+const paragraphCount = document.getElementById("paragraphCount");
+
+function updateCounter() {
+
+    const text = textInput.value;
+
+    // Character count
+    characterCount.textContent = text.length;
+
+    // Word count
+    const words = text.trim();
+
+    if (words === "") {
+        wordCount.textContent = 0;
+    } else {
+        wordCount.textContent = words.split(/\s+/).length;
+    }
+
+    // Paragraph count
+    const paragraphs = text
+        .split(/\n\s*\n/)
+        .filter(paragraph => paragraph.trim() !== "");
+
+    paragraphCount.textContent = paragraphs.length;
+}
+
+textInput.addEventListener("input", updateCounter);
+
+</script>
+
+</body>
+</html>

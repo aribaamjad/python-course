@@ -127,6 +127,10 @@ def blog_article(article):
 def prompts():
     return render_template("prompts.html")
 
+@app.route("/word-counter")
+def word_counter():
+    return render_template("word-counter.html")
+
 # ================= ARTICLES =================
 
 @app.route("/robofy-review-2026.html")
