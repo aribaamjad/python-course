@@ -63,9 +63,13 @@ def sitemap():
     </url>
 
     <url>
-    <loc>https://python-course-qczt.vercel.app/best-ai-automation-tools-small-businesses-2026.html</loc></url>
-     <url>
-     
+        <loc>https://python-course-qczt.vercel.app/best-ai-automation-tools-small-businesses-2026.html</loc>
+    </url>
+
+    <url>
+        <loc>https://python-course-qczt.vercel.app/word-counter</loc>
+    </url>
+
 </urlset>"""
 
     return sitemap_xml, 200, {"Content-Type": "application/xml"}
