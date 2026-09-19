@@ -160,6 +160,10 @@ def ai_image_generators_article():
 def ai_automation_small_business_article():
     return render_template("best-ai-automation-tools-small-businesses-2026.html")
 
+@app.route("/best-ai-meeting-assistants-2026.html")
+def ai_meeting_assistants_article():
+    return render_template("best-ai-meeting-assistants-2026.html")
+
 @app.route("/privacy")
 def privacy():
     return render_template("privacy.html")
