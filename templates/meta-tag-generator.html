@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Meta Tag Generator | AI Hub</title>
+    <meta name="description" content="Generate SEO-friendly HTML meta tags for your website with this free Meta Tag Generator.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+
+    <header class="border-b border-slate-800 px-6 py-5">
+        <a href="/" class="text-2xl font-bold text-blue-400">AI Hub</a>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-5 py-12">
+
+        <section class="mb-10 text-center">
+            <h1 class="mb-4 text-4xl font-bold md:text-5xl">
+                Free Meta Tag Generator
+            </h1>
+            <p class="text-slate-300">
+                Create SEO meta tags for your website in seconds.
+            </p>
+        </section>
+
+        <div class="grid gap-8 md:grid-cols-2">
+
+            <!-- INPUT FORM -->
+            <section class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+                <h2 class="mb-6 text-xl font-semibold">Enter Website Details</h2>
+
+                <form id="metaForm" class="space-y-5">
+
+                    <div>
+                        <label for="pageTitle" class="mb-2 block text-sm font-medium">
+                            Website Title
+                        </label>
+                        <input
+                            id="pageTitle"
+                            type="text"
+                            maxlength="70"
+                            placeholder="e.g. Best Free AI Tools"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 outline-none focus:border-blue-500"
+                            required
+                        >
+                        <p class="mt-1 text-xs text-slate-400">
+                            <span id="titleCount">0</span>/70 characters
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="pageDescription" class="mb-2 block text-sm font-medium">
+                            Meta Description
+                        </label>
+                        <textarea
+                            id="pageDescription"
+                            rows="4"
+                            maxlength="320"
+                            placeholder="Write a short description of your webpage..."
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 outline-none focus:border-blue-500"
+                            required
+                        ></textarea>
+                        <p class="mt-1 text-xs text-slate-400">
+                            <span id="descriptionCount">0</span>/320 characters
+                        </p>
+                    </div>
+
+                    <div>
+                        <label for="pageKeywords" class="mb-2 block text-sm font-medium">
+                            Keywords (optional)
+                        </label>
+                        <input
+                            id="pageKeywords"
+                            type="text"
+                            placeholder="AI tools, SEO, productivity"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 outline-none focus:border-blue-500"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="pageUrl" class="mb-2 block text-sm font-medium">
+                            Website URL (optional)
+                        </label>
+                        <input
+                            id="pageUrl"
+                            type="url"
+                            placeholder="https://example.com"
+                            class="w-full rounded-lg border border-slate-700 bg-slate-950 p-3 outline-none focus:border-blue-500"
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full rounded-lg bg-blue-600 px-5 py-3 font-semibold hover:bg-blue-500"
+                    >
+                        Generate Meta Tags
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- OUTPUT -->
+            <section class="rounded-2xl border border-slate-800 bg-slate-900 p-6">
+                <h2 class="mb-4 text-xl font-semibold">Generated HTML Code</h2>
+
+                <p class="mb-4 text-sm text-slate-400">
+                    Your meta tags will appear here.
+                </p>
+
+                <pre id="output" class="min-h-64 overflow-x-auto whitespace-pre-wrap break-words rounded-lg bg-slate-950 p-4 text-sm text-green-300"><code>Your generated code will appear here...</code></pre>
+
+                <button
+                    id="copyBtn"
+                    type="button"
+                    disabled
+                    class="mt-4 w-full rounded-lg bg-emerald-600 px-5 py-3 font-semibold hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                    Copy HTML Code
+                </button>
+
+                <p id="status" class="mt-3 text-center text-sm text-slate-300" aria-live="polite"></p>
+            </section>
+
+        </div>
+
+        <section class="mt-10 rounded-2xl border border-slate-800 bg-slate-900 p-6">
+            <h2 class="mb-4 text-xl font-semibold">Google Search Preview</h2>
+            <div class="rounded-lg bg-white p-5 text-slate-800">
+                <p id="previewUrl" class="mb-2 break-all text-sm text-green-800">
+                    yourwebsite.com
+                </p>
+                <h3 id="previewTitle" class="mb-2 text-xl text-blue-700">
+                    Your website title will appear here
+                </h3>
+                <p id="previewDescription" class="text-sm text-slate-600">
+                    Your meta description will appear here.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const form = document.getElementById("metaForm");
+        const titleInput = document.getElementById("pageTitle");
+        const descriptionInput = document.getElementById("pageDescription");
+        const keywordsInput = document.getElementById("pageKeywords");
+        const urlInput = document.getElementById("pageUrl");
+
+        const output = document.getElementById("output");
+        const copyBtn = document.getElementById("copyBtn");
+        const status = document.getElementById("status");
+
+        titleInput.addEventListener("input", () => {
+            document.getElementById("titleCount").textContent =
+                titleInput.value.length;
+        });
+
+        descriptionInput.addEventListener("input", () => {
+            document.getElementById("descriptionCount").textContent =
+                descriptionInput.value.length;
+        });
+
+        function escapeHtml(value) {
+            return value.replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[char]);
+        }
+
+        function escapeAttribute(value) {
+            return value.replace(/[&"]/g, char => ({
+                "&": "&amp;",
+                '"': "&quot;"
+            })[char]);
+        }
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const title = titleInput.value.trim();
+            const description = descriptionInput.value.trim();
+            const keywords = keywordsInput.value.trim();
+            const url = urlInput.value.trim();
+
+            if (!title || !description) {
+                status.textContent = "Please enter a title and description.";
+                return;
+            }
+
+            let code =
+`<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeAttribute(description)}">`;
+
+            if (keywords) {
+                code += `\n<meta name="keywords" content="${escapeAttribute(keywords)}">`;
+            }
+
+            if (url) {
+                code += `\n<link rel="canonical" href="${escapeAttribute(url)}">`;
+            }
+
+            output.textContent = code;
+            copyBtn.disabled = false;
+            status.textContent = "Meta tags generated successfully!";
+
+            document.getElementById("previewTitle").textContent = title;
+            document.getElementById("previewDescription").textContent = description;
+            document.getElementById("previewUrl").textContent =
+                url || "yourwebsite.com";
+        });
+
+        copyBtn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(output.textContent);
+                status.textContent = "HTML code copied successfully!";
+            } catch (error) {
+                status.textContent =
+                    "Copy failed. Please select and copy the code manually.";
+            }
+        });
+    </script>
+
+</body>
+</html>

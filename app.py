@@ -95,6 +95,9 @@ def home():
 def tools():
     return render_template("tools.html")
 
+@app.route("/meta-tag-generator")
+def meta_tag_generator():
+    return render_template("meta-tag-generator.html")
 
 # ================= ABOUT =================
 
