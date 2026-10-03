@@ -99,6 +99,12 @@ def tools():
 def meta_tag_generator():
     return render_template("meta-tag-generator.html")
 
+# ================= BACKGROUND REMOVER =================
+
+@app.route("/background-remover")
+def background_remover():
+    return render_template("background-remover.html")
+
 # ================= ABOUT =================
 
 @app.route("/about")
